@@ -1,3 +1,5 @@
+# This yaml file is used to automatically configure the jobs.
+
 jenkins:
   systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
   globalNodeProperties:

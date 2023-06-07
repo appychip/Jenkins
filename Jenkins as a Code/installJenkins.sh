@@ -1,3 +1,5 @@
+# This bash script will install the jdk and jenkins.
+
 #!/bin/bash
 set -x
 # Update the system packages

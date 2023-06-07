@@ -1,3 +1,5 @@
+#This is bash script for a freestyle job which is accessing the jenkins variables and user-defined variables.
+
 #!/bin/bash
 echo "The current build number is $BUILD_NUMBER"
 echo "The current build ID is $BUILD_ID"

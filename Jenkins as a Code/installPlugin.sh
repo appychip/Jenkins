@@ -1,3 +1,5 @@
+# This script will install all the plugins which are mentioned in the plain.txt file and after installation it will restart the jenkins in a safe mode.
+
 #!/bin/bash
 set -x
 for plugin in $(cat plugins.txt); do \
