@@ -1,0 +1,67 @@
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: VARIABLE1
+            value: foo
+          - key: VARIABLE2
+            value: bar
+
+tool:
+  git:
+    installations:
+      - name: git
+        home: git
+
+  maven:
+    installations:
+      - name: maven
+        home: /usr/bin/mvn
+
+  jdk:
+    installations:
+      - name: java11
+        home: /usr/bin/java
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              scope: GLOBAL
+              id: my-credential
+              description: "My Username/Password Credential"
+              username: myusername
+              password: mypassword
+
+
+jobs:
+  - script: >
+      job('freestyle-job') {
+          steps {
+            shell("""
+                echo "The current build number is \$BUILD_NUMBER"
+                echo "The current build ID is \$BUILD_ID"
+                echo "The Job Name is \$JOB_NAME"
+                echo "The Domain name is \$VARIABLE1"
+                echo "The college name  is \$VARIABLE2"
+            """)
+          }
+      }
+
+  - script: >
+      pipelineJob('pipeline-job') {
+          definition {
+              cpsScm {
+                  scm {
+                      git {
+                          remote {
+                              github('VinayakSingoriya/JCasC')
+                          }
+                      }
+                  }
+                  scriptPath('pipeline_job.groovy')
+              }
+          }
+      }

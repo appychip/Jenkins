@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "The current build number is $BUILD_NUMBER"
+echo "The current build ID is $BUILD_ID"
+echo "The Job Name is $JOB_NAME"
+echo "The Domain name is $VARIABLE1"
+echo "The college name  is $VARIABLE2"
+
