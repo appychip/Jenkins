@@ -37,7 +37,7 @@ credentials:
               username: myusername
               password: mypassword
 
-
+ 
 jobs:
   - script: >
       job('freestyle-job') {
