@@ -59,11 +59,11 @@ jobs:
                   scm {
                       git {
                           remote {
-                              github('VinayakSingoriya/JCasC')
+                              github('appychip/Jenkins')
                           }
                       }
                   }
-                  scriptPath('pipeline_job.groovy')
+                  scriptPath('Jenkins as a Code/pipeline_job.groovy')
               }
           }
       }
