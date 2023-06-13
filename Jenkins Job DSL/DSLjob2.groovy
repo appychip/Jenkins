@@ -17,6 +17,10 @@ job('NodeAppBuildPublish') {
         dockerBuildAndPublish {
             repositoryName('<USER_NAME>/<REPO_NAME>')
             registryCredentials('<CREDENTIAL_ID>')
+            buildContext("Jenkins\\ Job\\ DSL/NodeApp/")
+            dockerfileDirectory("Jenkins\\ Job\\ DSL/NodeApp/Dockerfile")
+
+
         }
     }
 }
